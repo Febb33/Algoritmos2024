@@ -237,8 +237,11 @@ print()
 tree.creatures_inorden()
 
 # b
-# for Creature in Creatures:
-#     tree.insert_node(Creature['Criatura'], Creature['Derrotado'], Creature['Capturada'])
+print()
+pos = tree.search('Minotauro de Creta')
+if pos is not None:
+    pos.other_value['Descripcion']= "Bestia agresiva"
+    print(pos.other_value)
 
 # c
 print()
@@ -261,20 +264,41 @@ print('Criaturas no derrotadas:')
 tree.inorden_no_derrotadas()
 
 # g
-# print()
+print()
+pos = tree.search('Cierva de Cerinea')
+if pos is not None and pos.other_value['Derrotado'] is None:
+    pos.other_value['Capturada'] = input('ingrese heroe que la capturó: ')
+    print(pos.other_value)
 
 # h
 print()
-# Bestias = ['Cerbero', 'Toro de Creta', 'Cierva de Cerinea', 'Jabalí de Erimanto']
-# for Bestia in Bestias:
-#     tree.search(Bestia)
-#     # tree.insert_node['Capturada'] = 'Heracles'
-#     # print(tree.inorden(Bestias))
-    
+pos = tree.search('Cerbero')
+if pos is not None:
+    pos.other_value['Capturada'] = 'Heracles'
+    print(pos.other_value)
 
-   
+print()
+pos = tree.search('Toro de Creta')
+if pos is not None:
+    pos.other_value['Capturada'] = 'Heracles'
+    print(pos.other_value)
+
+print()
+pos = tree.search('Cierva de Cerinea')
+if pos is not None:
+    pos.other_value['Capturada'] = 'Heracles'
+    print(pos.other_value)
+
+print()
+pos = tree.search('Jabalí de Erimanto')
+if pos is not None:
+    pos.other_value['Capturada'] = 'Heracles'
+    print(pos.other_value)
 
 # i
+print()
+buscado = input("ingrese nombre a buscar: ")
+tree.proximity_search(buscado)
 
 # j
 print()
@@ -289,7 +313,11 @@ for i in range(2):
 # print(tree.proximity_search('Basilisco'))
 
 # k
-# print()
+print()
+pos = tree.search('Aves del Estínfalo')
+if pos is not None:
+    pos.other_value['Descripcion'] = 'Heracles derrotó a varias'
+    print(pos.other_value)
 
 # l
 print()
